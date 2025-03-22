@@ -1,19 +1,10 @@
-"""
-PTAN stands for PyTorch AgentNet -- reimplementation of AgentNet library for pytorch
-"""
-import pathlib
-import setuptools
+from setuptools import setup, find_packages
 
-requirements = pathlib.Path("requirements.txt").read_text().splitlines()
-
-
-setuptools.setup(
+setup(
     name="ptan",
-    author="Max Lapan",
-    author_email="max.lapan@gmail.com",
-    license='GPL-v3',
-    description="PyTorch reinforcement learning framework",
-    version="0.8.1",
-    packages=setuptools.find_packages(),
-    install_requires=requirements,
+    version="0.1",
+    packages=find_packages(),
+    install_requires=[
+        line.strip() for line in open("requirements.txt").readlines() if line.strip()
+    ],
 )

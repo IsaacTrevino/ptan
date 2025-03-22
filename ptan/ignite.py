@@ -1,4 +1,4 @@
-import ptan
+from experience import ExperienceSource
 import time
 from typing import Optional
 from ignite.engine import Engine, State
@@ -13,7 +13,7 @@ class EpisodeEvents(EventEnum):
 
 
 class EndOfEpisodeHandler:
-    def __init__(self, exp_source: ptan.experience.ExperienceSource, alpha: float = 0.98,
+    def __init__(self, exp_source: ExperienceSource, alpha: float = 0.98,
                  bound_avg_reward: Optional[float] = None,
                  subsample_end_of_episode: Optional[int] = None):
         """
